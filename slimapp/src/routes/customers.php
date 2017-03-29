@@ -7,6 +7,7 @@ $app = new \Slim\App;
 // Get All Customers
 $app->get('/api/customers', function (Request $request, Response $response) {
     // echo 'CUSTOMERS'; }); 
+    
     $sql = "SELECT * FROM customers"; 
 
     try {
