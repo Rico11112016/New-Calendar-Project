@@ -1,1 +1,1 @@
-console.log("Hello");
+var app = angular.module('CalendarApp', ['ngRoute']);
