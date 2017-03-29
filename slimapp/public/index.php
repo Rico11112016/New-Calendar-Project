@@ -8,7 +8,7 @@ require '../src/config/db.php';
 $app = new \Slim\App;
 $app->get('/hello/{name}', function (Request $request, Response $response) {
     $name = $request->getAttribute('name');
-    $response->getBody()->write("Hi, $name");
+    $response->getBody()->write("Nice to see you, $name");
 
     return $response;
 });
