@@ -32,12 +32,11 @@ $app->post('/api/calendar/add', function (Request $request, Response $response) 
     $month = $request->getParam('Month');
     $day = $request->getParam('Day');
 
-    $day = 5;
+    $day = 1;
     while($day < 31) {
         $day = $day + 1;
         $sql = "INSERT INTO `days` (`Year`, `Month`, `Day`) VALUES ('2017', '1', '$day')";
-        return $day;
-        };
+         
 
     try {
         // Get DB Object
@@ -58,4 +57,5 @@ $app->post('/api/calendar/add', function (Request $request, Response $response) 
     } catch(PDOException $e) {
         echo '{"error": {"text": '.$e->getMessage().'}';
     }
+    };
 });
