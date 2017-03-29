@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+    line-height: 100px;
+    font-size: 48px;
+}
+
+.table-bordered {
+    text-align: center;
+    height: 830px;
+}
+
+.active, th {
+    text-align: center;
+    font-size: 23px;
+}
+
+.table-bordered .active, .table-bordered .active th, .table-bordered .other td {
+    vertical-align: middle;
+    font-size: 23px;
+}
+
+.table-bordered .active th {
+    width: 150px;
+}
+
