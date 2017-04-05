@@ -3,7 +3,7 @@ app.config(function ($routeProvider) {
     $routeProvider
         .when("/", {
             controller: "DaysController",
-            templateUrl: "views/days.html"
+            templateUrl: "views/test.html"
         })
         .otherwise({
             redirecTo: "/"

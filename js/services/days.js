@@ -1,5 +1,5 @@
 app.factory('days', ['$http', function($http) {
-    return $http.get('http://slimapp/api/calendar')
+    return $http.get('calendar.json')
         .success(function(data) {
             return data;
         })

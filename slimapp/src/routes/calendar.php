@@ -18,11 +18,14 @@ $app->get('/api/calendar', function (Request $request, Response $response) {
     $dbcalendar = $dbcalendar->connect();
 
     $stmt = $dbcalendar->query($sql);
-    $calendar = $stmt->fetchAll(PDO::FETCH_OBJ);
-    $dbcalendar = null;
-    echo json_encode($calendar);
+    $dbcalendar = $stmt->fetchAll(PDO::FETCH_OBJ);
+    // $dbcalendar = null;
+
+    return $response->withJson($dbcalendar);
+    
     } catch(PDOException $e) {
-        echo '{"error": {"text": '.$e->getMessage().'}';
+        $error = array('error' => array('text' => $e->getMessage()));
+        return $response->withJson($error,500);
     }
 });
 
