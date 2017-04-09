@@ -1,4 +1,7 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
@@ -16,12 +19,14 @@ $app->get('/api/calendar', function (Request $request, Response $response) {
     $dbcalendar = new dbcalendar();
     //Connect
     $dbcalendar = $dbcalendar->connect();
-
+    
     $stmt = $dbcalendar->query($sql);
     $dbcalendar = $stmt->fetchAll(PDO::FETCH_OBJ);
     // $dbcalendar = null;
 
+
     return $response->withJson($dbcalendar);
+    
     
     } catch(PDOException $e) {
         $error = array('error' => array('text' => $e->getMessage()));
