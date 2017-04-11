@@ -1,7 +1,7 @@
-<div ng-repeat="day in days">
-<p> Hello </p> 
-<p> {{day.Day}} </p>
-<p> {{day.Month}} </p> 
-<!-- <p> {{day.Year}} </p> -->
-</div> 
+<div ng-repeat="y in weeks_and_days">
+<p> {{y.month_name}} </p>    
+</div>
+<div ng-repeat="x in weeks_and_days.week">
+<p> {{x.week_nr}} </p> 
+</div>  
 
