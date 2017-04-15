@@ -11,7 +11,7 @@ $app = new \Slim\App;
 $app->get('/api/calendar', function (Request $request, Response $response) {
 
     $sql = "SELECT month_name FROM months"; // WHERE month_id = 1";
-    $sql2 = "SELECT week_nr, day_nr FROM weeks_and_days GROUP BY week_nr, day_nr";
+    $sql2 = "SELECT week_nr, day_nr FROM weeks_and_days WHERE day_nr <=7 GROUP BY week_nr, day_nr";
 
     try {
     // Get DB Object
